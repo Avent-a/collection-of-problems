@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 20</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            height: 100%;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 10px;
+        }
+
+
+        .submenu label.button {
+            cursor: pointer;
+        }
+
+        .sub-menu {
+            display: none;
+            list-style-type: disc;
+            margin-left: 15px;
+        }
+
+        .sub-menu li {
+            margin: 5px 0;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked + .sidebar .sub-menu {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<input type="checkbox" id="toggle">
+<div class="sidebar">
+    <ul>
+        <li><a href="#">Научное наследие</a></li>
+        <li class="submenu">
+            <label for="toggle" class="button" style="padding: 10px">Теория</label>
+            <ul class="sub-menu" style="padding: 20px">
+                <li>Отдельные издания</li>
+                <li>Труда РАО</li>
+                <li>Диссертационные материалы</li>
+            </ul>
+        </li>
+        <li><a href="#">Практика</a></li>
+        <li><a href="#">История</a></li>
+        <li><a href="#">Периодические издания</a></li>
+        <li><a href="#">Справочные материалы</a></li>
+        <li><a href="#">Библиография</a></li>
+        <li><a href="#">Материалы научно-практических мероприятий</a></li>
+    </ul>
+</div>
+</body>
+</html>

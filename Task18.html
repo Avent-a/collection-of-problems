@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 18</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .sale-banner {
+            background-color: #fff;
+            color: #333;
+            padding: 50px;
+            border-radius: 5px;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sale-banner h1 {
+            margin-bottom: 20px; 
+        }
+        .valid-until {
+           font-size: 1.2em; 
+           font-weight: bold; 
+           color: #e44d26; 
+           margin-bottom: 20px; 
+       }
+       .discount-box {
+          border: 2px solid #e44d26; 
+          display: inline-block; 
+          padding: 10px;  
+          border-radius: 5px;
+      }  
+      .discount {
+         font-size: 2em;  
+         color: #e44d26;   
+         display: inline-block;
+     }   
+     .website {
+         position: absolute;  
+         bottom: 10px;   
+         right: 10px;
+         font-size: 0.8em;
+         color: #666;
+     }    
+ </style>
+</head>
+<body>
+    <div class="sale-banner">
+        <h1>Распродажа стайлеров</h1>        
+        <p class="valid-until">🕗 Действует до 06 декабря </p>        
+        <div class="discount-box">Скидки до <p class="discount">12%</p></div>
+    </div>
+    <div class="website">Ваш веб-сайт</div>
+</body>
+</html>

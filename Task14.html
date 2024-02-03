@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задание 14</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .code-block {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        .info-block {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Собираем проект:</h1>
+    <div class="code-block">
+        $ bem make
+    </div>
+    <p>Первая сборка с bem-tools займет некоторое время, так как именно в этот момент в директории проекта устанавливаются все необходимые npm-пакеты.</p>
+    <h2>Для запуска сервера выполняем:</h2>
+    <div class="code-block">
+        $ bem server
+    </div>
+    <p>В результате вы увидите следующее сообщение:</p>
+    <div class="info-block">
+        info: Server is listening on port 8080. Point your browser to <a href="http://localhost:8080">http://localhost:8080</a>
+    </div>
+    <h2>Проблема?</h2>
+    <p>Если порт 8080 уже используется другой программой, его можно переназначить с помощью аргумента -p.</p>
+</body>
+</html>

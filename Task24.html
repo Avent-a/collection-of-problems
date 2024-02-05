@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 24</title>
+    <style>
+        .arrow-button {
+            position: relative;
+            padding: 10px 20px;
+            background-color: #838383;
+            color: orange;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .arrow-button:active {
+            position: relative;
+            padding: 10px 20px;
+            color: orange;
+            background-color: #3d3d3d;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .arrow-button:active::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -9px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 17px 0 19px 12px;
+            border-color: transparent transparent transparent #3d3d3d;
+            transform: translateY(-50%);
+        }
+
+
+    </style>
+</head>
+<body>
+<button class="arrow-button">Нажми</button>
+</body>
+</html>

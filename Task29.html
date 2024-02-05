@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список с добавлением</title>
+    <style>
+        /* Стили для стилизации списка */
+        #list-container {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="list-container">
+        <h2>Мой список</h2>
+        <ul id="my-list">
+            <!-- Сюда будут добавляться пункты -->
+        </ul>
+        <input type="text" id="new-item" placeholder="Введите новый пункт">
+        <button onclick="addItem()">Добавить</button>
+    </div>
+
+    <script>
+        function addItem() {
+            // Получаем значение из поля ввода
+            var newItemText = document.getElementById("new-item").value;
+
+            // Создаем новый элемент списка
+            var newItem = document.createElement("li");
+            newItem.textContent = newItemText;
+
+            // Добавляем новый элемент в список
+            document.getElementById("my-list").appendChild(newItem);
+
+            // Очищаем поле ввода
+            document.getElementById("new-item").value = "";
+        }
+    </script>
+
+</body>
+
+</html>

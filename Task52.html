@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .result-box {
+      border: 2px solid blue;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+  <title>Среднее арифметическое нечетных элементов</title>
+</head>
+<body>
+  <h2>Среднее арифметическое нечетных элементов</h2>
+  <p>Случайные числа: <span id="randomNumbers"></span></p>
+  <div class="result-box" id="resultBox"></div>
+
+  <script>
+    function generateRandomNumbers() {
+      const numbers = Array.from({ length: 10 }, () => Math.round(Math.random() * 20));
+      document.getElementById('randomNumbers').textContent = numbers.join(', ');
+
+      const oddNumbers = numbers.filter(num => num % 2 !== 0);
+      const averageOdd = oddNumbers.length > 0 ? oddNumbers.reduce((sum, num) => sum + num, 0) / oddNumbers.length : 0;
+
+      const resultBox = document.getElementById('resultBox');
+      if (averageOdd > 10) {
+        resultBox.style.color = 'blue';
+        resultBox.innerHTML = `Среднее арифметическое нечетных элементов: ${averageOdd.toFixed(2)}`;
+      } else {
+        resultBox.style.color = 'black';
+        resultBox.innerHTML = `Среднее арифметическое нечетных элементов: ${averageOdd.toFixed(2)}`;
+      }
+    }
+
+    // Вызов функции при загрузке страницы
+    window.onload = generateRandomNumbers;
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .rectangle {
+      width: 50px;
+      height: 30px;
+      background-color: yellow;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+  <title>Изменение цвета и размера прямоугольников</title>
+</head>
+<body>
+  <h2>Изменение цвета и размера прямоугольников</h2>
+  <div id="rectanglesContainer"></div>
+  <button onclick="resetPage()">Reset</button>
+
+  <script>
+    // Функция для создания прямоугольника
+    function createRectangle() {
+      const rectangle = document.createElement('div');
+      rectangle.className = 'rectangle';
+      rectangle.onclick = function() {
+        changeColorAndSize(rectangle);
+      };
+      return rectangle;
+    }
+
+    // Функция для изменения цвета и размера прямоугольника
+    function changeColorAndSize(rectangle) {
+      rectangle.style.backgroundColor = getRandomColor();
+      rectangle.style.height = '30px';
+    }
+
+    // Функция для сброса страницы
+    function resetPage() {
+      const rectanglesContainer = document.getElementById('rectanglesContainer');
+      rectanglesContainer.innerHTML = '';
+
+      for (let i = 0; i < 5; i++) {
+        const rectangle = createRectangle();
+        rectanglesContainer.appendChild(rectangle);
+      }
+    }
+
+    // Функция для генерации случайного цвета
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Инициализация страницы
+    document.addEventListener('DOMContentLoaded', function() {
+      const rectanglesContainer = document.getElementById('rectanglesContainer');
+      for (let i = 0; i < 5; i++) {
+        const rectangle = createRectangle();
+        rectanglesContainer.appendChild(rectangle);
+      }
+    });
+  </script>
+</body>
+</html>

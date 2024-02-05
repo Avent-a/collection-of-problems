@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    button {
+      margin: 10px;
+    }
+  </style>
+  <title>Клонирование кнопки</title>
+</head>
+<body>
+  <h2>Клонирование кнопки</h2>
+  <button onclick="cloneButton()">Клонировать</button>
+
+  <script>
+    function cloneButton() {
+      const originalButton = document.querySelector('button');
+      const clonedButton = originalButton.cloneNode(true);
+      document.body.appendChild(clonedButton);
+    }
+  </script>
+</body>
+</html>

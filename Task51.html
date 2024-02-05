@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+  <title>Проверка палиндрома</title>
+</head>
+<body>
+  <h2>Проверка палиндрома</h2>
+  <label for="inputWord">Введите слово или фразу:</label>
+  <input type="text" id="inputWord">
+  <button onclick="checkPalindrome()">Проверить</button>
+  <p id="result"></p>
+
+  <script>
+    function checkPalindrome() {
+      const inputWord = document.getElementById('inputWord').value.toLowerCase().replace(/[^a-zа-яё0-9]/g, '');
+      const reversedWord = inputWord.split('').reverse().join('');
+
+      const resultElement = document.getElementById('result');
+      if (inputWord === reversedWord) {
+        resultElement.textContent = 'Это палиндром!';
+      } else {
+        resultElement.textContent = 'Это не палиндром.';
+      }
+    }
+  </script>
+</body>
+</html>

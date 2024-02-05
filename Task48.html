@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 48</title>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Считаем количество секунд в часе, сутках и месяце
+        const secondsInHour = calculateSecondsInHour();
+        const secondsInDay = calculateSecondsInDay();
+        const secondsInMonth = calculateSecondsInMonth();
+
+        // Выводим результат в диалоговом окне
+        alert(`Количество секунд в часе: ${secondsInHour}\nКоличество секунд в сутках: ${secondsInDay}\nКоличество секунд в месяце: ${secondsInMonth}`);
+    });
+
+    function calculateSecondsInHour() {
+        return 60 * 60;
+    }
+
+    function calculateSecondsInDay() {
+        return calculateSecondsInHour() * 24;
+    }
+
+    function calculateSecondsInMonth() {
+        // Предполагаем, что месяц состоит из 30 дней
+        return calculateSecondsInDay() * 30;
+    }
+</script>
+
+</body>
+</html>

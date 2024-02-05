@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 49</title>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const a = parseInt(prompt('Введите начало отрезка (a):', '0'), 10);
+        const b = parseInt(prompt('Введите конец отрезка (b):', '10'), 10);
+        const x = parseInt(prompt('Введите число Х:', '2'), 10);
+
+        // Выводим числа из отрезка [a, b], которые делятся на Х
+        const result = findDivisibleNumbers(a, b, x);
+        alert(`Числа в отрезке [${a}, ${b}], которые делятся на ${x}: ${result.join(', ')}`);
+    });
+
+    function findDivisibleNumbers(start, end, divisor) {
+        const divisibleNumbers = [];
+        for (let i = start; i <= end; i++) {
+            if (i % divisor === 0) {
+                divisibleNumbers.push(i);
+            }
+        }
+        return divisibleNumbers;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 46</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        p {
+            color: black;
+            text-decoration: none;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+<p id="changingText">Пример текста</p>
+
+<input type="checkbox" onchange="changeStyle(this, 'underline')"> Перечеркнуть
+<input type="checkbox" onchange="changeStyle(this, 'bold')"> Сделать жирным
+<input type="checkbox" onchange="changeStyle(this, 'red')"> Сделать красным
+
+<script>
+    function changeStyle(checkbox, style) {
+        const changingText = document.getElementById('changingText');
+        switch (style) {
+            case 'underline':
+                changingText.style.textDecoration = checkbox.checked ? 'underline' : 'none';
+                break;
+            case 'bold':
+                changingText.style.fontWeight = checkbox.checked ? 'bold' : 'normal';
+                break;
+            case 'red':
+                changingText.style.color = checkbox.checked ? 'red' : 'black';
+                break;
+            default:
+                break;
+        }
+    }
+</script>
+
+</body>
+</html>

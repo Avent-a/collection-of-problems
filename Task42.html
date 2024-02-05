@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        p {
+            margin: 0;
+            padding: 5px;
+            background-color: lightgray;
+            margin-bottom: 5px;
+        }
+    </style>
+    <title>Task 42</title>
+</head>
+<body>
+
+<textarea id="outputTextarea"></textarea>
+
+<p onclick="copyText(this)">Text 1</p>
+<p onclick="copyText(this)">Text 2</p>
+<p onclick="copyText(this)">Text 3</p>
+
+<script>
+    function copyText(element) {
+        document.getElementById('outputTextarea').value = element.textContent;
+    }
+</script>
+
+</body>
+</html>

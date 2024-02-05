@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <title>Task 43</title>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const week = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+
+        // Текущий день недели
+        const currentDay = new Date().getDay();
+        const currentDayName = week[currentDay];
+
+        // День недели для даты 06.06.2006
+        const date2006 = new Date('2006-06-06');
+        const dayOfWeek2006 = week[date2006.getDay()];
+
+        // День недели для вашего дня рождения (замените 'YYYY-MM-DD' на свою дату рождения)
+        const birthdayDate = new Date('2004-01-25');
+        const birthdayDayOfWeek = week[birthdayDate.getDay()];
+
+        alert(`Текущий день недели: ${currentDayName}\nДень недели для 06.06.2006: ${dayOfWeek2006}\nДень недели для дня рождения: ${birthdayDayOfWeek}`);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #movingElement {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        button {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Task 44</title>
+</head>
+<body>
+
+<div id="movingElement"></div>
+
+<button onclick="moveLeft()">Move Left</button>
+<button onclick="moveRight()">Move Right</button>
+
+<script>
+    function moveLeft() {
+        document.getElementById('movingElement').style.transform = 'translateX(-1px)';
+    }
+
+    function moveRight() {
+        document.getElementById('movingElement').style.transform = 'translateX(100px)';
+    }
+</script>
+
+</body>
+</html>

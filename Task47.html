@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 47</title>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const number = 30;
+
+        // Находим делители числа
+        const divisors = findDivisors(number);
+
+        // Выводим результат в диалоговом окне
+        alert(`Делители числа ${number}: ${divisors.join(', ')}`);
+    });
+
+    function findDivisors(num) {
+        const divisors = [];
+        for (let i = 1; i <= num; i++) {
+            if (num % i === 0) {
+                divisors.push(i);
+            }
+        }
+        return divisors;
+    }
+</script>
+
+</body>
+</html>

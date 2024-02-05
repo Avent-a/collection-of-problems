@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+</head>
+<body>
+  <script>
+    // Замените значения $login и $pass на актуальные данные
+    const validLogin = 'login';
+    const validPassword = 'password';
+
+    function checkLogin() {
+      // Получаем значения, введенные пользователем
+      const enteredUsername = document.getElementById('username').value.trim();
+      const enteredPassword = document.getElementById('password').value.trim();
+
+      // Сравниваем с хранящимися значениями
+      if (enteredUsername === validLogin && enteredPassword === validPassword) {
+        alert('Доступ разрешен!');
+      } else {
+        alert('Доступ запрещен!');
+      }
+    }
+  </script>
+
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="password" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="button" onclick="checkLogin()">Login</button>
+  </form>
+</body>
+</html>

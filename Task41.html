@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px dashed blue;
+            background-color: lightblue;
+        }
+    </style>
+    <title>Task 41</title>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Генерация массива из 10 случайных чисел в диапазоне [1, 10]
+        const array = Array.from({ length: 10 }, () => Math.floor(Math.random() * 10) + 1);
+
+        // Натуральное число n
+        const n = Math.floor(Math.random() * 10) + 1;
+
+        // Подсчет количества вхождений числа n в массив
+        const countN = array.filter(num => num === n).length;
+
+        // Отображение результата в диалоговом окне
+        let resultMessage = `Сгенерированный массив: ${array.join(', ')}\n`;
+        resultMessage += `Число n: ${n}\n`;
+        resultMessage += `Количество вхождений числа n: ${countN}\n`;
+
+        if (countN > 2) {
+            resultMessage += `Количество вхождений больше 2: ${countN}`;
+            document.getElementById('result').style.color = 'red';
+        } else {
+            resultMessage += `Количество вхождений не больше 2: ${countN}`;
+            document.getElementById('result').style.backgroundColor = 'yellow';
+        }
+
+        document.getElementById('result').textContent = resultMessage;
+    });
+</script>
+
+<div id="result"></div>
+
+</body>
+</html>

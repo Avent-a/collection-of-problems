@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <title>Task 33</title>
+</head>
+<body>
+
+<input type="number" id="secondsInput" placeholder="Enter seconds">
+<button id="startCountdown">Start Countdown</button>
+<p id="countdownDisplay"></p>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const secondsInput = document.getElementById('secondsInput');
+        const startCountdownButton = document.getElementById('startCountdown');
+        const countdownDisplay = document.getElementById('countdownDisplay');
+
+        startCountdownButton.addEventListener('click', function () {
+            let seconds = parseInt(secondsInput.value);
+
+            if (!isNaN(seconds)) {
+                let countdownInterval = setInterval(function () {
+                    countdownDisplay.textContent = seconds;
+                    seconds--;
+
+                    if (seconds < 0) {
+                        clearInterval(countdownInterval);
+                        countdownDisplay.textContent = 'Countdown Finished!';
+                    }
+                }, 1000);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

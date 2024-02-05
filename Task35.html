@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #resultCheckbox {
+            margin-top: 10px;
+        }
+    </style>
+    <title>Task 35</title>
+</head>
+<body>
+
+<input type="checkbox" id="myCheckbox"> Check me
+<div id="resultCheckbox"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkbox = document.getElementById('myCheckbox');
+        const resultCheckbox = document.getElementById('resultCheckbox');
+
+        checkbox.addEventListener('change', function () {
+            resultCheckbox.textContent = checkbox.checked ? 'Отмечен' : 'Не отмечен';
+        });
+    });
+</script>
+
+</body>
+</html>

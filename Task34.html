@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+    <title>Task 34</title>
+</head>
+<body>
+
+<input type="button" value="Run Calculation" id="runCalculation">
+<div id="result"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const runCalculationButton = document.getElementById('runCalculation');
+        const resultDisplay = document.getElementById('result');
+
+        runCalculationButton.addEventListener('click', function () {
+            let num = 1000;
+            let iterations = 0;
+
+            while (num >= 50) {
+                num /= 2;
+                iterations++;
+            }
+
+            resultDisplay.innerHTML = `
+                <p>Через цикл while: ${num}</p>
+                <p>Количество итераций: ${iterations}</p>
+            `;
+        });
+    });
+</script>
+
+</body>
+</html>

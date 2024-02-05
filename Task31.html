@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <title>Task 31</title>
+</head>
+<body>
+
+<div id="resultBefore"></div>
+<div id="resultAfter"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const originalArray = [1, 2, -1, -2, 3, -3];
+        const resultBefore = document.getElementById('resultBefore');
+        const resultAfter = document.getElementById('resultAfter');
+
+        // Отобразить исходный массив
+        resultBefore.textContent = 'Исходный массив: ' + JSON.stringify(originalArray);
+
+        // Преобразовать массив и отобразить результат
+        const modifiedArray = originalArray.map(num => Math.abs(num));
+        resultAfter.textContent = 'Модифицированный массив: ' + JSON.stringify(modifiedArray);
+    });
+</script>
+
+</body>
+</html>

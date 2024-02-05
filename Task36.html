@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #resultRadio {
+            margin-top: 10px;
+        }
+    </style>
+    <title>Task 36</title>
+</head>
+<body>
+
+<p id="resultRadio">Выбран элемент: </p>
+
+<input type="radio" name="myRadio" value="Option 1" id="radio1"> Option 1
+<input type="radio" name="myRadio" value="Option 2" id="radio2"> Option 2
+<input type="radio" name="myRadio" value="Option 3" id="radio3"> Option 3
+<input type="radio" name="myRadio" value="Option 4" id="radio4"> Option 4
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const resultRadio = document.getElementById('resultRadio');
+
+        document.querySelectorAll('input[name="myRadio"]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                resultRadio.textContent = 'Выбран элемент: ' + this.value;
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

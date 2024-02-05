@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <title>Task 37</title>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Генерация 10 случайных чисел в диапазоне [-10, 10]
+        const numbers = Array.from({ length: 10 }, () => Math.round(Math.random() * 20 - 10));
+
+        // Округление до целого и поиск минимального значения
+        const roundedNumbers = numbers.map(num => Math.round(num));
+        const minNumber = Math.min(...roundedNumbers);
+
+        // Подсчет количества минимальных элементов
+        const minCount = roundedNumbers.filter(num => num === minNumber).length;
+
+        // Отображение результата в диалоговом окне
+        let resultMessage = `Сгенерированные числа: ${numbers.join(', ')}\n`;
+        resultMessage += `Округленные числа: ${roundedNumbers.join(', ')}\n`;
+        resultMessage += `Минимальное значение: ${minNumber}\n`;
+
+        if (minCount > 2) {
+            resultMessage += `Количество минимальных элементов больше 2: ${minCount}`;
+            alert(resultMessage);
+        } else {
+            resultMessage += `Количество минимальных элементов не больше 2: ${minCount}`;
+            alert(resultMessage);
+        }
+    });
+</script>
+
+</body>
+</html>

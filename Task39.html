@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <title>Task 39</title>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const threeDigitNumbers = [];
+
+        for (let i = 100; i <= 999; i++) {
+            const digits = String(i).split('').map(Number);
+
+            if (digits[0] === digits[1] + digits[2]) {
+                threeDigitNumbers.push(i);
+            }
+        }
+
+        alert(`Трехзначные числа, где первая цифра равна сумме второй и третьей: ${threeDigitNumbers.join(', ')}`);
+    });
+</script>
+
+</body>
+</html>

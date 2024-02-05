@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+    <title>Task 40</title>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Генерация массива из 10 случайных чисел в диапазоне [-50, 50]
+        const array = Array.from({ length: 10 }, () => Math.round(Math.random() * 100 - 50));
+
+        // Функция для вычисления суммы положительных элементов массива
+        function calculatePositiveSum(arr) {
+            return arr.reduce((sum, num) => (num > 0) ? sum + num : sum, 0);
+        }
+
+        const positiveSum = calculatePositiveSum(array);
+
+        // Отображение результата в диалоговом окне
+        let resultMessage = `Сгенерированный массив: ${array.join(', ')}\n`;
+        resultMessage += `Сумма положительных элементов: ${positiveSum}\n`;
+
+        if (positiveSum > 100) {
+            resultMessage += `Сумма больше 100: ${positiveSum}`;
+            document.getElementById('result').style.backgroundColor = 'purple';
+            document.getElementById('result').style.color = 'white';
+            document.getElementById('result').style.borderColor = 'red';
+        } else {
+            resultMessage += `Сумма не больше 100: ${positiveSum}`;
+            document.getElementById('result').style.backgroundColor = 'yellow';
+            document.getElementById('result').style.borderColor = 'black';
+        }
+
+        document.getElementById('result').textContent = resultMessage;
+    });
+</script>
+
+<div id="result"></div>
+
+</body>
+</html>

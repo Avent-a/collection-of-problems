@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <title>Task 38</title>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const twoDigitNumbersWith5 = [];
+
+        for (let i = 10; i <= 99; i++) {
+            if (String(i).includes('5')) {
+                twoDigitNumbersWith5.push(i);
+            }
+        }
+
+        alert(`Двузначные числа, в записи которых есть цифра 5: ${twoDigitNumbersWith5.join(', ')}`);
+    });
+</script>
+
+</body>
+</html>

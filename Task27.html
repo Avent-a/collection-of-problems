@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Задание 27</title>
     <style>
+        
         div {
             position: absolute;
             width: 100px;
@@ -12,12 +13,14 @@
         }
 
         div.red {
-
             background-color: red;
+            top: 20px;
+            left: 20px; /* было 180px, сдвигаем вправо на 20px */
         }
 
         div.green {
-            left: 180px;
+            left: 160px;
+            top: 20px; /* было 250px, сдвигаем вверх на 20px */
             width: 300px;
             height: 200px;
             background-color: green;
@@ -25,14 +28,15 @@
 
         div.blue {
             height: 200px;
-            top: 150px;
+            top: 130px;
+            left: 20px; /* было 180px, сдвигаем вправо на 20px */
             background-color: blue;
         }
 
         div.yellow {
-            top: 250px;
+            top: 230px; /* было 250px, сдвигаем вверх на 20px */
             width: 300px;
-            left: 180px;
+            left: 160px; /* было 180px, сдвигаем вправо на 20px */
             background-color: yellow;
         }
     </style>
@@ -44,8 +48,6 @@
     <div class="blue"></div>
     <div class="yellow"></div>
 </div>
-
-
 
 </body>
 </html>

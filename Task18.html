@@ -24,6 +24,7 @@
             width: 80%;
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         .sale-banner h1 {
             margin-bottom: 20px; 
@@ -33,12 +34,16 @@
            font-weight: bold; 
            color: #e44d26; 
            margin-bottom: 20px; 
+           position: relative; /* Changed from absolute */
        }
        .discount-box {
-          border: 2px solid #e44d26; 
+          border: 2px dashed #e44d26; 
           display: inline-block; 
           padding: 10px;  
           border-radius: 5px;
+          position: absolute;
+          top: 20px;
+          right: 20px;
       }  
       .discount {
          font-size: 2em;  
@@ -57,9 +62,8 @@
 <body>
     <div class="sale-banner">
         <h1>Распродажа стайлеров</h1>        
-        <p class="valid-until">🕗 Действует до 06 декабря </p>        
+        <p class="valid-until">🕗 Действует до 06 декабря </p>
         <div class="discount-box">Скидки до <p class="discount">12%</p></div>
     </div>
-    <div class="website">Ваш веб-сайт</div>
 </body>
 </html>

@@ -12,6 +12,10 @@
       border: 1px solid black;
       padding: 8px;
     }
+
+    .empty-cell {
+      background-color: lightgrey; /* Цвет фона для пустых ячеек */
+    }
   </style>
   <title>Пустующие депозитные ячейки</title>
 </head>
@@ -24,19 +28,28 @@
       <td></td>
     </tr>
     <tr>
-      <td>Текст</td>
       <td></td>
       <td></td>
     </tr>
     <?php
       // PHP-код для поиска и выделения пустых ячеек
+      $totalEmptyCells = 0; // Переменная для подсчета общего количества пустых ячеек
       for ($i = 0; $i < 3; $i++) {
         echo "<tr>";
         for ($j = 0; $j < 3; $j++) {
-          echo "<td></td>";
+          // Генерация случайных чисел для имитации заполненных и пустых ячеек
+          $randomValue = rand(0, 1); 
+          if ($randomValue == 0) {
+            echo "<td class='empty-cell'></td>"; // Вывод пустой ячейки с классом для стилизации
+            $totalEmptyCells++; // Увеличение счетчика общего количества пустых ячеек
+          } else {
+            echo "<td>Заполнено</td>";
+          }
         }
         echo "</tr>";
       }
+      // Вывод строки с общим количеством пустых ячеек
+      echo "<tr><td colspan='3'>Общее количество пустых ячеек: $totalEmptyCells</td></tr>";
     ?>
   </table>
 </body>

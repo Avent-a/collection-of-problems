@@ -33,7 +33,8 @@
     // Функция для изменения цвета и размера прямоугольника
     function changeColorAndSize(rectangle) {
       rectangle.style.backgroundColor = getRandomColor();
-      rectangle.style.height = '30px';
+      rectangle.style.width = getRandomSize() + 'px';
+      rectangle.style.height = getRandomSize() + 'px';
     }
 
     // Функция для сброса страницы
@@ -55,6 +56,11 @@
         color += letters[Math.floor(Math.random() * 16)];
       }
       return color;
+    }
+
+    // Функция для генерации случайного размера
+    function getRandomSize() {
+      return Math.floor(Math.random() * 100) + 20; // Генерация размера от 20 до 120 пикселей
     }
 
     // Инициализация страницы

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .calculator {
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+
+  .result {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #2980b9;
+  }
+</style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="result" id="result">0</div>
+    <button class="btn" onclick="plus(2)">Plus 2</button>
+    <button class="btn" onclick="plus(3)">Plus 3</button>
+    <button class="btn" onclick="minus(1)">Minus 1</button>
+  </div>
+
+  <script>
+    let result = 0;
+
+    function plus(num) {
+      result += num;
+      document.getElementById('result').textContent = result;
+    }
+
+    function minus(num) {
+      result -= num;
+      document.getElementById('result').textContent = result;
+    }
+  </script>
+</body>
+</html>

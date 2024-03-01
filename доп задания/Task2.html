@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date Sorting</title>
+<style>
+  /* CSS стили */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+
+  #output {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+<div id="output"></div>
+
+<script>
+  // JavaScript код
+  var arr = [{date: '10.01.2017'}, {date: '05.11.2016'}, {date: '21.12.2002'}];
+
+  arr.forEach(function(item) {
+    var arrDate = item.date.split('.'),
+        date = new Date(Number(arrDate[2]), Number(arrDate[1]) - 1, Number(arrDate[0]));
+    item.time = date.getTime();
+  });
+
+  arr.sort(function (a, b) {
+    return a.time - b.time;
+  });
+
+  var res = arr.map(function (item) {
+    return {date: item.date};
+  });
+
+  var output = document.getElementById('output');
+  var ul = document.createElement('ul');
+
+  res.forEach(function(item) {
+    var li = document.createElement('li');
+    li.textContent = item.date;
+    ul.appendChild(li);
+  });
+
+  output.appendChild(ul);
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moveable Animation</title>
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="box"></div>
+
+  <script>
+    const box = document.querySelector('.box');
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    box.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+
+    function startDrag(e) {
+      isDragging = true;
+      offsetX = e.clientX - box.getBoundingClientRect().left;
+      offsetY = e.clientY - box.getBoundingClientRect().top;
+    }
+
+    function drag(e) {
+      if (!isDragging) return;
+      const x = e.clientX - offsetX;
+      const y = e.clientY - offsetY;
+      box.style.left = `${x}px`;
+      box.style.top = `${y}px`;
+    }
+
+    function stopDrag() {
+      isDragging = false;
+    }
+  </script>
+</body>
+</html>

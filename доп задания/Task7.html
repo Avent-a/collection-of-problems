@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bracket Checker</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  #result {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .valid {
+    color: green;
+  }
+
+  .invalid {
+    color: red;
+  }
+</style>
+</head>
+<body>
+  <input type="text" id="input" placeholder="Введите строку со скобками">
+  <div id="result"></div>
+
+  <script>
+    const input = document.getElementById('input');
+    const result = document.getElementById('result');
+
+    input.addEventListener('input', function() {
+      const str = this.value;
+      const isValid = isBalanced(str);
+      result.textContent = isValid ? 'Скобки закрыты правильно' : 'Скобки НЕ закрыты правильно';
+      result.className = isValid ? 'valid' : 'invalid';
+    });
+
+    function isBalanced(str) {
+      const stack = [];
+      const pairs = {
+        '(': ')',
+        '[': ']',
+        '{': '}'
+      };
+
+      for (let char of str) {
+        if (char in pairs) {
+          stack.push(char);
+        } else if (char === ')' || char === ']' || char === '}') {
+          if (stack.length === 0 || pairs[stack.pop()] !== char) {
+            return false;
+          }
+        }
+      }
+
+      return stack.length === 0;
+    }
+  </script>
+</body>
+</html>
